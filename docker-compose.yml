@@ -1,0 +1,36 @@
+volumes:
+  kong_data: { }
+
+networks:
+  kong-net:
+    driver: bridge
+
+services:
+
+  kong:
+    container_name: kong-gateway 
+    image: kong:3.9.1
+    restart: unless-stopped
+    networks:
+      - kong-net
+    environment:
+      KONG_DATABASE: "off"
+      KONG_DECLARATIVE_CONFIG: /kong/declarative/kong.yml
+      KONG_PROXY_ACCESS_LOG: /dev/stdout
+      KONG_ADMIN_ACCESS_LOG: /dev/stdout
+      KONG_PROXY_ERROR_LOG: /dev/stderr
+      KONG_ADMIN_ERROR_LOG: /dev/stderr
+      KONG_ADMIN_LISTEN: 0.0.0.0:8001
+    ports:
+      - "8000:8000"
+      - "8443:8443"
+      - "8001:8001"
+      - "8444:8444"
+      - "8002:8002"
+      - "8445:8445"
+      - "8003:8003"
+      - "8004:8004"
+    volumes:
+      - ${PWD}/kong/declarative:/kong/declarative:ro
+    extra_hosts:
+      - host.docker.internal:host-gateway
