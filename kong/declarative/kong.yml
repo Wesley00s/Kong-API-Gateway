@@ -1,0 +1,38 @@
+_format_version: "3.0"
+
+services:
+  - name: Products-API
+    host: host.docker.internal
+    port: 8080
+    protocol: http
+    routes:
+      - name: products-api-route
+        paths:
+          - /ecommerce/api/v1
+        strip_path: false
+      - name: products-docs-ui-route
+        paths:
+          - /ecommerce/api/swagger-ui
+        strip_path: false
+      - name: products-docs-api-route
+        paths:
+          - /ecommerce/api/v3/api-docs
+        strip_path: false
+
+  - name: Reviews-API
+    host: host.docker.internal
+    port: 8081
+    protocol: http
+    routes:
+      - name: reviews-api-route
+        paths:
+          - /reviews/api/v1
+        strip_path: false
+      - name: reviews-docs-ui-route
+        paths:
+          - /reviews/api/swagger-ui
+        strip_path: false
+      - name: reviews-docs-api-route
+        paths:
+          - /reviews/api/v3/api-docs
+        strip_path: false
