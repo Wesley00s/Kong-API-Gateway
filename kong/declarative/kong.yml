@@ -36,3 +36,21 @@ services:
         paths:
           - /reviews/api/v3/api-docs
         strip_path: false
+
+  - name: Payment-API
+    host: host.docker.internal
+    port: 8082
+    protocol: http
+    routes:
+      - name: payment-api-route
+        paths:
+          - /payment/api/v1
+        strip_path: false
+      - name: payment-docs-ui-route
+        paths:
+          - /payment/api/swagger-ui
+        strip_path: false
+      - name: payment-docs-api-route
+        paths:
+          - /payment/api/v3/api-docs
+        strip_path: false
