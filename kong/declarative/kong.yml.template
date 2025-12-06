@@ -4,7 +4,7 @@ services:
   - name: Products-API
     host: ${PRODUCTS_API_HOST}
     port: ${PRODUCTS_API_PORT}
-    protocol: http
+    protocol: https
     routes:
       - name: products-api-route
         paths:
@@ -22,7 +22,7 @@ services:
   - name: Reviews-API
     host: ${REVIEWS_API_HOST}
     port: ${REVIEWS_API_PORT}
-    protocol: http
+    protocol: https
     routes:
       - name: reviews-api-route
         paths:
@@ -40,7 +40,7 @@ services:
   - name: Payment-API
     host: ${PAYMENT_API_HOST}
     port: ${PAYMENT_API_PORT}
-    protocol: http
+    protocol: https
     routes:
       - name: payment-api-route
         paths:
