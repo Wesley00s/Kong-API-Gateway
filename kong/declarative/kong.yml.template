@@ -5,31 +5,31 @@ services:
     host: ${PRODUCTS_API_HOST}
     port: ${PRODUCTS_API_PORT}
     protocol: https
-    preserve_host: false
     routes:
       - name: products-main-route
         paths:
           - /ecommerce/api
         strip_path: false
+        preserve_host: false
 
   - name: Reviews-API
     host: ${REVIEWS_API_HOST}
     port: ${REVIEWS_API_PORT}
     protocol: https
-    preserve_host: false
     routes:
       - name: reviews-main-route
         paths:
           - /reviews/api
         strip_path: false
+        preserve_host: false
 
   - name: Payment-API
     host: ${PAYMENT_API_HOST}
     port: ${PAYMENT_API_PORT}
     protocol: https
-    preserve_host: false
     routes:
       - name: payment-main-route
         paths:
           - /payment/api
         strip_path: false
+        preserve_host: false
