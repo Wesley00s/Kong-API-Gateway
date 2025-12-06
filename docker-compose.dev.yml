@@ -1,6 +1,8 @@
 services:
   kong:
     container_name: kong-gateway
+    build:
+      context: .
     image: wesley00s/kong-gateway:latest
     restart: unless-stopped
     networks:
