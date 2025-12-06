@@ -6,27 +6,27 @@ services:
     port: ${PRODUCTS_API_PORT}
     protocol: https
     routes:
-      - name: products-wildcard-route
+      - name: products-main-route
         paths:
-          - /ecommerce/products
-        strip_path: true
+          - /ecommerce/api
+        strip_path: false
 
   - name: Reviews-API
     host: ${REVIEWS_API_HOST}
     port: ${REVIEWS_API_PORT}
     protocol: https
     routes:
-      - name: reviews-wildcard-route
+      - name: reviews-main-route
         paths:
-          - /ecommerce/reviews
-        strip_path: true
+          - /reviews/api
+        strip_path: false
 
   - name: Payment-API
     host: ${PAYMENT_API_HOST}
     port: ${PAYMENT_API_PORT}
     protocol: https
     routes:
-      - name: payment-wildcard-route
+      - name: payment-main-route
         paths:
-          - /ecommerce/payment
-        strip_path: true
+          - /payment/api
+        strip_path: false
